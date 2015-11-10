@@ -10,9 +10,6 @@ var CanvasIcons = function(canvas_id) {
     assert(text.length )
 
     var img = new Image();
-    img.onload = function() {
-      console.log("img loaded")
-    }
     img.src = imgLocation;
 
     // assert the image is square so that scaling is not awful...
@@ -50,9 +47,9 @@ var CanvasIcons = function(canvas_id) {
       _ctx.fillRect(element.x, element.y, 48, 48);
 
       // draw image on icon
-      _ctx.drawImage(document.img,
-                    document.x + 8,
-                    document.y + 3,
+      _ctx.drawImage(element.img,
+                    element.x + 8,
+                    element.y + 3,
                     32,
                     32);
 
@@ -60,10 +57,10 @@ var CanvasIcons = function(canvas_id) {
       _ctx.fillStyle = "rgb(0,0,0)";
       _ctx.textAlign = "center";
       _ctx.font = "10px Tahoma";
-      textLengthInPixels = Math.floor(_ctx.measureText(document.text).width)
-      _ctx.fillText(document.text,
-                    Math.floor(textLengthInPixels + document.x / 2),
-                    document.y + 45)
+      textLengthInPixels = Math.floor(_ctx.measureText(element.text).width)
+      _ctx.fillText(element.text,
+                    Math.floor(textLengthInPixels + element.x / 2),
+                    element.y + 45)
     });
   };
 }
