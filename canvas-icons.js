@@ -1,4 +1,3 @@
-var imgDebug = {};
 var CanvasIcons = function(canvas_id) {
   var _canvas = document.getElementById(canvas_id),
       _ctx = _canvas.getContext("2d"),
@@ -7,7 +6,7 @@ var CanvasIcons = function(canvas_id) {
 
   // an icon is 48x48
   this.addIcon = function(x, y, imgLocation, text) {
-    assert(text.length )
+    //assert(text.length )
 
     var img = new Image();
     img.src = imgLocation;
