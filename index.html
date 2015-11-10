@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Canvas-Icons.js</title>
+    <style>
+      #canvas-icons {
+        display:block;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas-icons" width=800 height=600>
+      You're browser does not support the canvas tag.  Sorry.
+    </canvas>
+    <script src="canvas-icons.js"></script>
+    <script>
+      var icons = new CanvasIcons("canvas-icons");
+      icons.addIcon(10,
+                    10,
+                    "http://icons.iconarchive.com/icons/fasticon/web-2/256/Twitter-icon.png",
+                    "Twitter");
+
+      setTimeout(function() {icons.draw()}, 1000);
+    </script>
+  </body>
+</html>
