@@ -40,7 +40,7 @@ var CanvasIcons = function(canvas_id) {
   }
 
   this.draw = function() {
-    var textLengthInPixels = 0
+    _ctx.translate(0.5, 0.5);
     _icons.forEach(function(element, index, array) {
       // draw icon background
       _ctx.fillStyle = "rgb(192,192,192)";
@@ -57,13 +57,14 @@ var CanvasIcons = function(canvas_id) {
       _ctx.fillStyle = "rgb(0,0,0)";
       _ctx.textAlign = "center";
       _ctx.font = "10px Tahoma";
-      textLengthInPixels = Math.floor(_ctx.measureText(element.text).width)
       _ctx.fillText(element.text,
-                    Math.floor(textLengthInPixels + element.x / 2),
+                    element.x + 24,
                     element.y + 45)
     });
   };
 }
+
+
 
 function assert(condition, message) {
   if(!condition) {
